@@ -1,0 +1,150 @@
+/* ====== HERO SECTION ====== */
+.hero-section {
+  background: #f6f6ff;
+  padding: 80px 0;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+.hero-text span {
+  color: #4a3aff;
+}
+
+.hero-text p {
+  color: #555;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.cta-button {
+  background-color: #4a3aff;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #372ee6;
+  transform: scale(1.05);
+}
+
+.hero-image img {
+  width: 260px;
+  height: auto;
+  border-radius: 20px;
+}
+
+/* ====== CATEGORIES ====== */
+.categories-section {
+  text-align: center;
+  padding: 100px 0;
+  background: #fff;
+}
+
+.categories-section h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.category-card {
+  border-radius: 18px;
+  padding: 25px;
+  background: #f3f3ff;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+.category-card img {
+  width: 80px;
+  height: 80px;
+}
+
+/* ====== BENEFITS ====== */
+.benefits-section {
+  padding: 100px 0;
+  background: #fafaff;
+  text-align: center;
+}
+
+.benefit-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.benefit-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+  width: 280px;
+  transition: 0.3s;
+}
+
+.benefit-card:hover {
+  transform: translateY(-6px);
+}
+
+/* ====== CTA SECTION ====== */
+.cta-section {
+  text-align: center;
+  padding: 100px 20px;
+  background: #f6f6ff;
+}
+
+.cta-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.cta-section p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+

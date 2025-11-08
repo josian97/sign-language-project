@@ -1,0 +1,71 @@
+
+
+<section class="hero-section">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1>Discover the Joy of Sign Language with <span>ASLkids!</span></h1>
+      <p>A vibrant and fun way for children and parents to learn American Sign Language together.</p>
+      <button class="cta-button" (click)="scrollToCategories()">Start Learning Now</button>
+    </div>
+    <div class="hero-image">
+      <img src="assets/images/hero-kid.png" alt="happy kid signing">
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="categories-section" id="categories">
+  <h2>Explore Our Learning Categories</h2>
+
+  <div *ngIf="loading" class="loading">Loading categories...</div>
+  <div *ngIf="!loading && errorMsg" class="error">{{ errorMsg }}</div>
+
+  <div class="category-grid" *ngIf="!loading && categories.length > 0">
+    <a
+      *ngFor="let cat of categories"
+      [routerLink]="['/category', cat.id]"
+      class="category-card"
+      [style.background]="cat.color || '#f7f7f7'"
+    >
+      <div class="cat-info">
+        <h3>{{ cat.name }}</h3>
+      </div>
+      <img [src]="cat.image" alt="{{ cat.name }}" />
+    </a>
+  </div>
+</section>
+
+
+
+
+
+<section class="benefits-section">
+  <h2>Why Learn ASL with ASLkids?</h2>
+
+  <div class="benefit-grid">
+    <div class="benefit-card">
+      <h3>Boosts Communication</h3>
+      <p>Helps your child express themselves earlier and clearer.</p>
+    </div>
+    <div class="benefit-card">
+      <h3>Enhances Cognitive Skills</h3>
+      <p>Supports memory and problem-solving abilities.</p>
+    </div>
+    <div class="benefit-card">
+      <h3>Connects Families</h3>
+      <p>Strengthens family bonds through shared learning.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="cta-section">
+  <h2>Ready to Start Signing?</h2>
+  <p>Join thousands of families discovering the joy and benefits of American Sign Language!</p>
+  <button class="cta-button" (click)="scrollToCategories()">Begin Your ASL Adventure!</button>
+</section>
+
+
+
