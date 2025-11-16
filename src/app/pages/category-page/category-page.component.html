@@ -1,6 +1,9 @@
 <div class="cards-container">
-    <app-card *ngFor="let card of cards" [name]="card.name" [image]="card.image" (click)="openPopup(card)">
+    @for (card of cards; track $index) {
+    <app-card [name]="card.name" [image]="card.image" (click)="openPopup(card)">
     </app-card>
+    }
+
 </div>
 
 <!-- Overlay -->
