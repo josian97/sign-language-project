@@ -6,8 +6,8 @@ export const routes: Routes = [
   {
     path: 'category/:id',
     loadComponent: () =>
-      import('./pages/category/category.component').then(
-        (m) => m.CategoryComponent
+      import('./pages/category-page/category-page.component').then(
+        (m) => m.CategoryPageComponent
       ),
   },
 ];

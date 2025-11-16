@@ -1,0 +1,18 @@
+<div class="cards-container">
+    <app-card *ngFor="let card of cards" [name]="card.name" [image]="card.image" (click)="openPopup(card)">
+    </app-card>
+</div>
+
+<!-- Overlay -->
+
+
+<!-- Popup card -->
+@if (showPopup) {
+<div class="overlay" (click)="closePopup()"></div>
+<div class="popup-card">
+    <img [src]="selectedCard.image" alt="{{ selectedCard?.name }}" />
+    <h3>{{ selectedCard?.name }}</h3>
+    <video [src]="selectedCard.video" type="video/mp4" (click)="play()" #Video></video>
+    <button (click)="closePopup()">learned</button>
+</div>
+}
