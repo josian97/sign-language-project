@@ -1,57 +1,97 @@
+
 :host {
   display: block;
   min-height: 100vh; 
   width: 100%;
   background: linear-gradient(135deg, #abfaed, #e0f8f7);
+  font-family: Arial, sans-serif;
 }
+
 
 .cards-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
   gap: 25px;                             
-  justify-items: center;                 
-  padding: 40px 0;                       
+  justify-items: center;            
+   padding: 40px 0;                       
   width: 100%;
   max-width: 1000px;                    
   margin: 0 auto;  
 }
 
+@media (max-width: 900px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 
-/* Dark transparent background */
+@media (max-width: 550px) {
+  .cards-container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+
+}
+.category-title {
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  width: 100%;
+  max-width: 350px; 
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+
+
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 100;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 1000;
 }
 
-/* pop up card container */
+
 .popup-card {
   position: fixed;
-  top: 20%;
-  left: 40%;
-  width: 400px;
-  max-width: 90%;
-  background: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
   border-radius: 12px;
   padding: 20px;
-  text-align: center;
-  z-index: 101;
-  transition: transform 0.3s ease;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
-
-/* Scale up when visible */
-.popup-card.ng-star-inserted {
-  transform: translate(-50%, -50%) scale(1);
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
 }
 
 .popup-card img {
-  width: 15%;
+  max-width: 200px;
   border-radius: 8px;
   margin-bottom: 10px;
 }
@@ -61,12 +101,83 @@
   border-radius: 8px;
   margin-bottom: 10px;
 }
-.popup-card h2 {
+
+.popup-card h2, .popup-card h3 {
   margin: 10px 0;
 }
 
 .popup-card p {
   font-size: 14px;
   color: #555;
+  text-align: center;
 }
+
+.popup-card button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.popup-card button:hover {
+  background-color: #45a049;
+}
+
+
+.category-progress, .progress-box {
+  margin: 15px 0;
+  width: 100%;
+}
+
+.bar {
+ width: 100%;
+  height: 12px;
+  background: #ececec;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.fill {
+  background-color: #4caf50;
+  height: 100%;
+  width: 0%;
+  transition: width 0.5s ease-in-out;
+  border-radius: 12px 0 0 12px;
+}
+
+.category-progress p,
+.progress-box p {
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto 25px auto;
+  text-align: center;
+}
+
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  font-weight: bold;
+  z-index: 9999;
+  animation: fadeInOut 3s forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  10% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  90% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+}
+
 
