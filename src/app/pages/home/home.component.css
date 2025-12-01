@@ -59,6 +59,8 @@
 }
 
 
+
+
 .category-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
@@ -152,8 +154,27 @@
     width: 100px;
   }
 }
+.categories-section button[routerLink] {
 
-
+display: inline-block;
+  background:#666;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(255, 80, 80, 0.4);
+  transition: all 0.3s ease;
+  margin: 0 auto;
+  display: block;
+  text-align: center; 
+  width: fit-content;
+}
+.categories-section button[routerLink]:hover {
+  background-color: #ff4d4d;
+}
 
 
 .benefits-section {

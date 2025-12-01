@@ -9,14 +9,16 @@
 
 
 <div class="cards-container">
-  <ng-container *ngFor="let card of cards; let i = index">
-    <app-card 
-      [name]="card.name" 
-      [image]="card.image" 
+  <ng-container *ngFor="let card of cards">
+    <app-card
+      [name]="card.name"
+      [image]="card.image"
+      [id]="card.id"
       (click)="openPopup(card)"
     ></app-card>
   </ng-container>
 </div>
+
 
 <div *ngIf="showPopup">
   <div class="overlay" (click)="closePopup()"></div>

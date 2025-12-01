@@ -4,7 +4,6 @@ import { CardComponent } from '../../shared/card/card.component';
 import { CommonModule } from '@angular/common';
 import { ProgressService } from '../../shared/progress.service';
 
-
 @Component({
   selector: 'app-category-page',
   standalone: true,
@@ -42,9 +41,8 @@ export class CategoryPageComponent implements OnInit {
 
         const category = data.categories.find((cat: any) => cat.id == id);
         this.categoryName = category.name;
-        this.cards = category.items
-         this.updateProgress();
-       
+        this.cards = category.items;
+        this.updateProgress();
 
       });
   }
@@ -65,12 +63,11 @@ export class CategoryPageComponent implements OnInit {
   }
 
   toggleLearned(card: any) {
-  if (!card) return;
+    if (!card) return;
     this.progressService.toggleLearned(this.route.snapshot.paramMap.get('id')!, card.id);
     this.showToastMessage()
   }
 
-  
   updateProgress() {
     const categoryId = this.route.snapshot.paramMap.get('id')!;
     const total = this.cards.length;
@@ -79,14 +76,12 @@ export class CategoryPageComponent implements OnInit {
     this.progress = total ? (learned / total) * 100 : 0;
   }
 
-  
   subscribeToProgress() {
     this.progressService.progress$.subscribe(() => {
       this.updateProgress();
     });
   }
 
-  
   showToastMessage() {
     this.showToast = true;
     setTimeout(() => {
