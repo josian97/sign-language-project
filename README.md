@@ -1,3 +1,13 @@
+## Download Required File
+
+This project requires an additional file that is hosted on Google Drive.  
+Please download it from the link below and place it in the required folder:
+
+🔗 **Google Drive Link:** https://drive.google.com/file/d/19uCdp_6rlMd8M3oeAExvMQ8MLNO_j3OK/view?usp=drive_link
+
+After downloading, please put the file in:  src/assets
+
+
 # SignProject
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.8.
