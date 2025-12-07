@@ -17,7 +17,6 @@ export class FavoritesComponent implements OnInit {
 
   ngOnInit(): void {
     const favIds = this.favService.getList()
-    // لو عندك data.json عشان تجيب البيانات الكاملة
     fetch('assets/data/data.json')
       .then(res => res.json())
       .then(data => {
